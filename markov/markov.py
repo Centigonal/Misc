@@ -6,6 +6,7 @@ class markov(object):
 		self.markovdict = {}
 	
 	def add(self, words, order=1):
+		#words = words.encode("ascii")
 		words = words.replace("(","")
 		words = words.replace(")","")
 		words = words.replace("."," .")
@@ -67,3 +68,4 @@ class markov(object):
 		while len(update.split()) <= length:
 			update += self.sentence() + ' '
 		return update.strip()
+
